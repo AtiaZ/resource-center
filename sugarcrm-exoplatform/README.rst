@@ -1,8 +1,8 @@
 ##################################
- eXo Social sugarcrm plugin README
+ eXo Platform sugarcrm plugin README
 ##################################
 
-This plugin integrate eXo Spaces with sugarCRM case management.
+This plugin integrate eXo Platform with sugarCRM case management.
 
 Features
 ========
@@ -15,7 +15,7 @@ Compatibility
 This plugin has been tested with: (it doesn't mean it doesn't work with other configuration)
 
 * eXo Platform 4.0.4
-* SugarCRM CE 6.5.16.zip
+* SugarCRM CE 6.5.16
 * Browser
     * IE 
     * Firefox
