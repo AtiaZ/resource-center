@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+<ModulePrefs title="Analytics: Pageview - Download" 
+  author="Dao Cong Anh" 
+  author_email="anhdc@exoplatform.com" 
+  description="Display a chart of the number of Website Visits and Downloads">
+      <Require feature="dynamic-height"/>
+</ModulePrefs>
+
+<Content type="html">
+<![CDATA[ 
+  <html>
+    <head>
+      <script language="javascript" type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.js"></script>  
+    <script type="text/javascript">
+          function displayDate(d) {
+              var gsMonthNames = new Array(
+                                'Jan',
+                                'Feb',
+                                'Mar',
+                                'Apr',
+                                'May',
+                                'Jun',
+                                'Jul',
+                                'Aug',
+                                'Sep',
+                                'Oct',
+                                'Nov',
+                                'Dec'
+                                );
+              return gsMonthNames[d.getMonth()]+'-'+d.getDate();
+            }
+          function paramDate(d){
+              function pad(n){return n<10 ? '0'+n : n}
+              return d.getUTCFullYear() + '-' + pad(d.getUTCMonth()+1) + '-' + pad(d.getUTCDate());
+            }  
+      
+          function queryREST(url, data){
+            return $.ajax({
+              type: "GET",
+              url: url,
+              data: data,
+              dataType: 'json',
+              async: false
+            });
+          }
+        
+      	  function getDownloadsData() {
+            var d  = new Date();
+            //time range set to last 7 days
+            var start_date = paramDate(new Date(d.getTime()-7*24*60*60*1000));
+            var end_date = paramDate(d);  
+            var fakeTimestamp=d.getUTCHours() + d.getUTCMinutes();          
+            //provide url to your sourceforge.net file
+            var url = "http://sourceforge.net/projects/exo/files/stats/json?start_date="+start_date+"&end_date="+end_date+"&fake="+fakeTimestamp;
+            var query = "select * from json where url=\"" + url + "\"";
+          
+      	    return $.parseJSON(queryREST("http://query.yahooapis.com/v1/public/yql",{ q: query, format: "json" }).responseText);              
+          
+ 		       }
+        
+    	    function getVisitsData() {
+		        var analytics_view_id = "<your analytics profile ID>";
+		        var GA_Account_ID = "<Email address of your generated client ID>";
+		        var d  = new Date();
+		        var start_date = paramDate(new Date(d.getTime()-7*24*60*60*1000));
+		        var end_date = paramDate(d);  
+		        var url = '/rest/ga/get-data/'
+		            +GA_Account_ID
+		            +'/'+analytics_view_id
+		            +'?start_date='+start_date
+		            +'&end_date='+end_date;
+		        
+		        return $.parseJSON(queryREST(url,null).responseText);
+			    }
+      
+    		  function loadData(){
+				    var jsonVisits = getVisitsData().rows;
+				    var jsonDownloads = getDownloadsData().query.results.json.downloads;
+				    var dataCats = [];
+				    
+				    var dataVisits=[];
+				    for (i=0;i<jsonVisits.length-1;i++){
+				        dataVisits.push(parseInt(jsonVisits[i][1])+parseInt(jsonVisits[i][2]));
+					    }
+				    var dataDownloads=[];
+    		    for (i=0;i<jsonVisits.length-1;i++){
+    		        dataDownloads.push(parseInt(jsonDownloads[i].json[1]));
+    		        dataCats.push(displayDate(new Date(jsonDownloads[i].json[0].substring(0,jsonDownloads[i].json[0].indexOf(" ",0)))));
+    			    }
+        
+    		    drawChart(dataVisits,dataDownloads,dataCats);
+    		  } 
+        
+				  function drawChart(dataVisits, dataDownloads, dataCats){
+				    
+				    chart=new Highcharts.Chart({
+				        chart: {
+				            renderTo: 'container'
+				        },
+				        title: {
+				            text: 'Website Visits & Downloads'
+				        },
+				        
+				        xAxis: [{
+				            categories: dataCats
+				        }],
+				        yAxis: [{ // Primary yAxis
+				            labels: {
+				                format: '{value}',
+				                style: {
+				                    color: '#5373a9'
+				                }
+				            },
+				            title: {
+				                text: 'Downloads',
+				                style: {
+				                    color: '#5373a9'
+				                }
+				            },
+				          min : 0,
+				          allowDecimals: false
+				        }, { // Secondary yAxis
+				            title: {
+				                text: 'Website Visits',
+				                style: {
+				                    color: '#ffcb08'
+				                }
+				            },
+				            labels: {
+				                format: '{value}',
+				                style: {
+				                    color: '#ffcb08'
+				                }
+				            },
+				            opposite: true,
+				            min : 0,
+				            allowDecimals: false
+				        }],
+				        tooltip: {
+				            shared: true
+				        },
+				        legend: {
+				            layout: 'vertical',
+				            align: 'center',
+				            x: 0,
+				            verticalAlign: 'top',
+				            y:20,
+				            floating: true,
+				            backgroundColor: '#FFFFFF'
+				        },
+				        series: [{
+				            name: 'Downloads',
+				            color: '#5373a9',
+				            type: 'column',                
+				            data: dataDownloads
+				        }, {
+				            name: 'Website Visits',
+				            color: '#ffcb08',
+				            type: 'spline',                
+				            yAxis: 1,
+				            data: dataVisits                
+				        }]
+				      });
+				    
+				        
+				  }
+        
+        	gadgets.util.registerOnLoadHandler(loadData);
+        
+    </script>
+      </head>
+      <body>
+        <script src="http://code.highcharts.com/highcharts.js"></script>
+        <script src="http://code.highcharts.com/modules/exporting.js"></script>
+        <div id="container" style="min-width: 250px; height: 200px; margin: 0 auto"></div>        
+      </body>
+  </html>
+]]></Content></Module>
