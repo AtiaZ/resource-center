@@ -1,0 +1,7 @@
+*.iws
+stacktrace.log
+target
+plugins
+web-app/js/yui-cms
+web-app/js/yui
+web-app/plugins
