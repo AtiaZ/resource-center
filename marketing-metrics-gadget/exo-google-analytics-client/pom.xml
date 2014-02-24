@@ -32,11 +32,11 @@
   <version>0.1</version>
   <dependencies>
   	<dependency>
-	  <groupId>org.mortbay.jetty</groupId>
-	  <artifactId>servlet-api</artifactId>
-	  <version>2.5-20081211</version>
-	  <scope>provided</scope>
-	</dependency>
+			<groupId>org.mortbay.jetty</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5-20081211</version>
+	  	<scope>provided</scope>
+		</dependency>
   	<dependency>
       <groupId>com.google.apis</groupId>
       <artifactId>google-api-services-analytics</artifactId>
@@ -56,37 +56,7 @@
       <groupId>org.exoplatform.ws</groupId>
       <artifactId>exo.ws.rest.core</artifactId>
       <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.platform</groupId>
-      <artifactId>platform-component-organization</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.integration</groupId>
-      <artifactId>integ-social-ecms</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.portal</groupId>
-      <artifactId>exo.portal.webui.portal</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.gatein.shindig</groupId>
-      <artifactId>shindig-social-api</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.jcr</groupId>
-      <artifactId>exo.jcr.framework.command</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.kernel</groupId>
-      <artifactId>exo.kernel.container</artifactId>
-      <scope>provided</scope>
-    </dependency>
+    </dependency>    
   </dependencies>
   <build>
   	<plugins>
