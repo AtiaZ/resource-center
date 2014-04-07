@@ -31,8 +31,8 @@ import org.exoplatform.social.core.space.spi.SpaceLifeCycleEvent;
  * to don't update activities when user join/left space (ORG-625)
  *
  */
-public class CustomedSpaceActivityPublisher extends SpaceActivityPublisher {
-  public CustomedSpaceActivityPublisher(InitParams params,
+public class CustomSpaceActivityPublisher extends SpaceActivityPublisher {
+  public CustomSpaceActivityPublisher(InitParams params,
       ActivityManager activityManager, IdentityManager identityManager) {
     super(params, activityManager, identityManager);
     // TODO Auto-generated constructor stub

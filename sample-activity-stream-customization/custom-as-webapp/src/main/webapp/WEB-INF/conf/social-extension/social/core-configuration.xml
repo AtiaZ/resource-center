@@ -311,7 +311,7 @@
       <component-plugin>
         <name>SpaceActivityPublisher</name>
         <set-method>addSpaceListener</set-method>
-        <type>org.exoplatform.customization.listener.CustomedSpaceActivityPublisher</type>
+        <type>org.exoplatform.customization.listener.CustomSpaceActivityPublisher</type>
       </component-plugin>
 			<!--Override listener to not publishing activities when user join/left a space -->
       <component-plugin>

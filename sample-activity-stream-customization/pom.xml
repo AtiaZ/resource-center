@@ -34,8 +34,8 @@
   <name>Sample Activity Stream Customization</name>
   <description></description>
   <modules>
-    <module>customed-as-config</module>
-    <module>customed-as-webapp</module>
-    <module>customed-as-service</module>
+    <module>custom-as-config</module>
+    <module>custom-as-webapp</module>
+    <module>custom-as-service</module>
   </modules>
 </project>

@@ -26,7 +26,7 @@
     <groupId>org.exoplatform</groupId>
     <version>1.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>customed-as-webapp</artifactId>
-  <packaging>war</packaging>
-  <name>Customed Activity Stream Webapp</name>  
+  <artifactId>custom-as-config</artifactId>
+  <packaging>jar</packaging>
+  <name>Custom Activity Stream Config</name>
 </project>

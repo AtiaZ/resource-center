@@ -26,15 +26,7 @@
     <groupId>org.exoplatform</groupId>
     <version>1.0.x-SNAPSHOT</version>
   </parent>
-  <artifactId>customed-as-service</artifactId>
-  <packaging>jar</packaging>
-  <name>Customed Activity Stream Services</name>
-  <dependencies>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-component-webui</artifactId>
-      <version>4.0.3</version>
-			<scope>provided</scope>
-    </dependency>
-  </dependencies>
+  <artifactId>custom-as-webapp</artifactId>
+  <packaging>war</packaging>
+  <name>Custom Activity Stream Webapp</name>  
 </project>
