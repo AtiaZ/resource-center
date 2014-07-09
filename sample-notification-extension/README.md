@@ -1,5 +1,11 @@
 
-# Overview 
+# Overview
+
+How to extend the social email notification?
+ 
+This is a sample to add new email notification when connected users post an activity
+
+# Description 
 
 The Email Notification feature help you avoid missing anything in your organization. These emails help you to keep track of activities and events in your Social Intranet.
 
