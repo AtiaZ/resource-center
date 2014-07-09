@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.community.notification.plugin;
+package org.exoplatform.custom.notification.plugin;
 
 import java.io.IOException;
 import java.io.Writer;

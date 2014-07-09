@@ -9,7 +9,7 @@
     <component-plugin>
       <name>ActivityNotificationImpl</name>
       <set-method>addActivityEventListener</set-method>
-      <type>org.exoplatform.community.notification.impl.ActivityNotificationImpl</type>
+      <type>org.exoplatform.custom.notification.impl.ActivityNotificationImpl</type>
     </component-plugin>
   </external-component-plugins>
   

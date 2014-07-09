@@ -9,7 +9,7 @@
     <component-plugin>
       <name>notification.plugins</name>
       <set-method>add</set-method>
-      <type>org.exoplatform.community.notification.plugin.ActivityConnectionPlugin</type>
+      <type>org.exoplatform.custom.notification.plugin.ActivityConnectionPlugin</type>
       <description>Initial information for plugin.</description>
       <init-params>
         <object-param>

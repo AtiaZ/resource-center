@@ -14,12 +14,12 @@
 * You should have received a copy of the GNU General Public License
 * along with this program; if not, see<http://www.gnu.org/licenses/>.
  */
-package org.exoplatform.community.notification.impl;
+package org.exoplatform.custom.notification.impl;
 
 import org.exoplatform.commons.api.notification.NotificationContext;
 import org.exoplatform.commons.api.notification.model.NotificationKey;
 import org.exoplatform.commons.notification.impl.NotificationContextImpl;
-import org.exoplatform.community.notification.plugin.ActivityConnectionPlugin;
+import org.exoplatform.custom.notification.plugin.ActivityConnectionPlugin;
 import org.exoplatform.social.core.activity.ActivityLifeCycleEvent;
 import org.exoplatform.social.core.activity.ActivityListenerPlugin;
 import org.exoplatform.social.core.activity.model.ExoSocialActivity;
