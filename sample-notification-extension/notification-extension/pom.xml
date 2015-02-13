@@ -18,49 +18,13 @@
 
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>custom-notification</artifactId>
-    <groupId>org.exoplatform.resource-center</groupId>
-    <version>4.1.x-SNAPSHOT</version>
-  </parent>
+  <modelVersion>4.0.0</modelVersion>  
   <groupId>org.exoplatform.resource-center</groupId>
   <artifactId>custom-notification-extension</artifactId>
   <version>4.1.x-SNAPSHOT</version>
   <packaging>war</packaging>
   <name>eXo Custom Notification Extension</name>
-  <description>eXo Custom Notification Extension</description>
-  <dependencies>
-    <dependency>
-      <groupId>org.exoplatform.commons</groupId>
-      <artifactId>commons-api</artifactId>
-      <version>${project.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-component-common</artifactId>
-      <version>${project.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-component-notification</artifactId>
-      <version>${project.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.social</groupId>
-      <artifactId>social-component-core</artifactId>
-      <version>${project.version}</version>
-      <scope>runtime</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.exoplatform.resource-center</groupId>
-      <artifactId>custom-notification-config</artifactId>
-      <version>${project.version}</version>
-    </dependency>
-  </dependencies>
+  <description>eXo Custom Notification Extension</description>  
   <build>
     <finalName>custom-notification-extension</finalName>
   </build>

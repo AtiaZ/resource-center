@@ -21,12 +21,6 @@
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <artifactId>maven-parent-pom</artifactId>
-    <groupId>org.exoplatform</groupId>
-    <version>12</version>
-    <relativePath />
-  </parent>
   <groupId>org.exoplatform.resource-center</groupId>
   <artifactId>custom-notification</artifactId>
   <version>4.1.x-SNAPSHOT</version>

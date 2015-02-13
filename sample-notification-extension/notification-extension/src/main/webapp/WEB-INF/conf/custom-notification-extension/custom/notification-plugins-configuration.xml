@@ -8,7 +8,7 @@
     <target-component>org.exoplatform.commons.api.notification.service.setting.PluginContainer</target-component>
     <component-plugin>
       <name>notification.plugins</name>
-      <set-method>add</set-method>
+      <set-method>addPlugin</set-method>
       <type>org.exoplatform.custom.notification.plugin.ActivityConnectionPlugin</type>
       <description>Initial information for plugin.</description>
       <init-params>
@@ -36,7 +36,7 @@
             <field name="templateConfig">
               <object type="org.exoplatform.commons.api.notification.plugin.config.TemplateConfig">
                 <field name="bundlePath">
-                  <string>locale.notification.template.Notification</string>
+                  <string>locale.notification.custom.template.Notification</string>
                 </field>
                 <field name="templatePath">
                   <string>war:/notification/templates/ActivityConnectionPlugin.gtmpl</string>
